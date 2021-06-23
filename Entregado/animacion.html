@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <meta name="autores" content="Garcia Gamiño Rafael Julian
+                                    García Hernández Marcos Emmanuel
+                                    García Samperio Janice Amairani
+                                    García Sánchez María Guadalupe" />
+		<title>Animación</title>
+        <link rel="stylesheet" href="./Estilos.css" />
+        <script src="./Prefij.js"></script>
+    </head>
+    <body>
+        <!-- Sidebar -->
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+            <a href="divideyvenceras.html" class="w3-bar-item w3-button">Divide y Venceras</a>
+            <a href="fuerzabruta.html" class="w3-bar-item w3-button">Fuerza Bruta</a>
+            <a href="animacion.html" class="w3-bar-item w3-button">Animación</a>
+        </div>
+        <!-- Page Content -->
+        <div class="w3-teal">
+            <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+            <div class="w3-container">
+                <h1>Garcia Family</h1>
+            </div>
+        </div>
+        <div className="description">
+            <div className="text">
+                <p className="content">
+                    En este algoritmo, se discute un enfoque de divide y vencerás. Primero dividimos las matrices de
+                    cuerdas en dos partes. Luego hacemos lo mismo para la parte izquierda y luego para la parte derecha.
+                    Lo haremos hasta y a menos que todas las cadenas tengan una longitud de 1. Ahora, después de eso, 
+                    comenzaremos a conquistar devolviendo el prefijo común de las cadenas izquierda y derecha. 
+                    El algoritmo quedará claro usando la siguiente ilustración. Consideramos nuestras cadenas como <br></br>
+                    - "geeksforgeeks", "geeks", "geek", "geezer".
+                </p>
+                <div class="image">
+                    <img src="DyV_LPS.jpg" alt="dyv2" style="width:100%">
+                </div>
+                <p className="content">
+                    Complejidad del tiempo: dado que estamos iterando a través de todos los caracteres de todas las cadenas, 
+                    podemos decir que la complejidad del tiempo es O (NM) donde,<br></br><br></br>
+                    N = Número de cuerdas <br></br>
+                    M = Longitud de la cuerda más grande<br></br><br></br>
+                    Espacio auxiliar: para almacenar la cadena de prefijo más larga, estamos asignando espacio que es O (M Log N).
+                </p>
+                <p className="content">
+                    Complejidad espacial<br></br>
+                    O (m * logn) debido a que almacenamos la cadena resultante o la cadena de prefijo más larga, estamos asignando
+                    espacio que es O (m * logn).
+                </p>
+                <p className="content">
+                    Ejemplo didactico<br></br>
+                    A continuación se puede observar un ejemplo, sin embargo tambien puede borrarlo y agregar las palabras que desee
+                    para ver el funcionamiento.
+                </p>
+            </div>
+          </div>
+        <div class="botones">
+			<INPUT type="text" id="P1" title="Palabra" placeholder="Ingresar palabra"
+			style="text-transform:lowercase;" value="" pattern="[a-z]+" onkeyup="javascript:this.value=this.value.toLowerCase();"/>
+			<input type="button" class="buttom" value="Ingresar" onclick="getString()"/>
+			<span id="aquiStrings"></span>
+
+			<INPUT type="text" id="P2" title="Borrar" placeholder="Borrar palabra"
+			style="text-transform:lowercase;" value="" pattern="[a-z]+"  onkeyup="javascript:this.value=this.value.toLowerCase();"/>
+			<input type="button" class="buttom" value="Borrar" onclick="deleteString()" />	
+
+			<div class="buscar">
+				<input type="button" id="P3" class="buttom" value="Obtener Prefijo Comun Mas Largo" onclick="showLCP()"/>
+			</div>
+		</div>
+
+
+		<div>
+			
+		</div>
+
+		<tr>
+			<td colspan="3" id="Conjunto">
+
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="3">
+				<table class="Arbol" id="T1">
+				</table>
+			</td>
+		</tr>
+        
+        <div id="prueba" >
+			
+        </div>
+        
+        <div id="prueba2" >
+            
+        </div>
+        
+        <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+        </script>
+    </body>
+</html>

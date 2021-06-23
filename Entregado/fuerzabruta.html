@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <meta name="autores" content="Garcia Gamiño Rafael Julian
+                                    García Hernández Marcos Emmanuel
+                                    García Samperio Janice Amairani
+                                    García Sánchez María Guadalupe" />
+		<title>Fuerza Bruta</title>
+        <link rel="stylesheet" href="./Estilos.css" />
+    </head>
+    <body>
+        <!-- Sidebar -->
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+            <a href="divideyvenceras.html" class="w3-bar-item w3-button">Divide y Venceras</a>
+            <a href="fuerzabruta.html" class="w3-bar-item w3-button">Fuerza Bruta</a>
+            <a href="animacion.html" class="w3-bar-item w3-button">Animación</a>
+        </div>
+        <!-- Page Content -->
+        <div class="w3-teal">
+            <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+            <div class="w3-container">
+                <h1>Garcia Family</h1>
+            </div>
+        </div>
+        <div class="text">
+            <p class="content">
+                Se discuten  2 enfoques diferentes para resolver este problema.
+            </p>
+        </div>
+        <div class="text">
+            <p className="content">
+                <h5>Escaneo horizontal:</h5> Se busca el PCL de strs [0] con strs [1] con strs [2] y así sucesivamente.
+                Una forma sencilla de encontrar el prefijo común más largo compartido por un conjunto de cadenas PCL (S1 ... Sn) se puede encontrar bajo la observación de que
+                PCL (S1… Sn) = PCL (PCL (PCL (S1, S2), S3),… .Sn)
+            </p>
+            <p className="content">
+                Para lograrlo, simplemente iterar a través de las cadenas [S1… Sn], encontrando en cada iteración i el prefijo común más largo de cadenas PCL (S1… Si). Cuando el LCP (S1… Si) es una cadena vacía, puede devolver una cadena vacía. De lo contrario, después de n iteraciones, el algoritmo devolverá PCL (S1… Sn).
+            </p>
+            <div class="image">
+                <img src="E_horizontal.png" alt="dyv2" style="width:100%">
+            </div>
+            <p className="content">
+                <h6>Complejidad de tiempo:</h6> O(s), donde S es la suma de todos los caracteres en todas las cadenas
+            </p>
+            <p className="content">
+                <h6>Complejidad espacial:</h6> O(1)
+            </p>
+        </div>
+        <div className="text">
+            <p className="content">
+              <h5>Escaneo vertical</h5>  Escanea todos los caracteres en el índice 0, luego en el índice 1, luego en el índice 2 y así sucesivamente.
+              </p>
+              <p className="content">
+              Se supone  que una cadena muy corta es el prefijo común de la matriz. Todavía hay comparaciones S. Una forma de optimizar este caso es realizar un escaneo vertical. Comparamos los caracteres de arriba hacia abajo en la misma columna (el mismo índice de caracteres de las cadenas) antes de pasar a la siguiente columna.
+              </p>
+              <p className="content">
+              Se escanea verticalmente el índice 0 de todas las cadenas, en este caso su "A" para cada cadena, por lo que el LCP hasta ahora es "A". Ahora se escanea verticalmente el primer índice de cada cadena, el segundo carácter de cada cadena no es el mismo, por lo que devolveremos el prefijo hasta ahora.
+              </p>
+              <div class="image">
+                <img src="E_vertical.png" alt="dyv2" style="width:100%">
+            </div>
+              <p className="content">
+              <h6>Complejidad de tiempo:</h6> O(s), donde S es la suma de todos los caracteres en todas las cadenas
+              </p>
+              <p>
+              En el mejor de los casos, hay como máximo n * comparaciones minLen donde minLen es la longitud de la cadena más corta de la matriz.
+              </p>
+              <p className="content">
+              <h6>Complejidad espacial:</h6> O(1). Solo usamos espacio extra constante
+            </p>
+          </div>
+            
+        <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+        </script>
+    </body>
+</html>

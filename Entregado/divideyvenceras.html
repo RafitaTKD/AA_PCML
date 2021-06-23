@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <meta name="autores" content="Garcia Gamiño Rafael Julian
+                                    García Hernández Marcos Emmanuel
+                                    García Samperio Janice Amairani
+                                    García Sánchez María Guadalupe" />
+		<title>Divide y Venceras</title>
+        <link rel="stylesheet" href="./Estilos.css" />
+    </head>
+    <body>
+        <!-- Sidebar -->
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+            <a href="divideyvenceras.html" class="w3-bar-item w3-button">Divide y Venceras</a>
+            <a href="fuerzabruta.html" class="w3-bar-item w3-button">Fuerza Bruta</a>
+            <a href="animacion.html" class="w3-bar-item w3-button">Animación</a>
+        </div>
+        <!-- Page Content -->
+        <div class="w3-teal">
+            <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+            <div class="w3-container">
+            <h1>Garcia Family</h1>
+            </div>
+        </div>
+        
+        <img src="escom.jpg" alt="escom" style="width:100%">
+        
+        <div class="text">
+            <p class="title">Divide y Venceras</p>
+            <p class="content">
+                Este paradigma, divide y vencerás, separa un problema en subproblemas
+                que se parecen al problema original, de manera recursiva resuelve los
+                subproblemas y, por último, combina las soluciones de los subproblemas 
+                para resolver el problema original. Como divide y vencerás resuelve
+                subproblemas de manera recursiva, cada subproblema debe ser más pequeño
+                que el problema original, y debe haber un caso base para los subproblemas.
+                Debes pensar que los algoritmos de divide y vencerás tienen tres partes:
+            </p>
+            <p class="content">
+                1.- Divide el problema en un número de subproblemas que son instancias 
+                    más pequeñas del mismo problema.
+            </p>
+            <p class="content">
+                2.- Vence los subproblemas al resolverlos de manera recursiva. Si son los 
+                    suficientemente pequeños, resuelve los subproblemas como casos base.
+            </p>
+            <p class="content">
+                3.- Combina las soluciones de los subproblemas en la solución para el 
+                    problema original
+            </p>
+            <div class="image">
+                <<img src="DyV_corto.png" alt="dyv1" style="width:80%">
+            </div>
+            <div>
+                <p class="content">
+                    Si expandimos a dos pasos recursivos más, se ve así:
+                </p>
+            </div>
+            <div class="image">
+                <img src="DyV_largo.png" alt="dyv2" style="width:100%">
+            </div>
+        </div>
+        <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+        </script>
+    </body>
+</html>
